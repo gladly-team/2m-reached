@@ -52,7 +52,7 @@ export const CelebrationModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <ConfettiEffect triggerKey={confettiKey} />
 
           {/* Backdrop - Darker and simpler */}
