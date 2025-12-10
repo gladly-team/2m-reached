@@ -17,21 +17,17 @@ export const CelebrationModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Tab for a Cause - $2 Million Raised",
-          text: "We just hit $2 Million raised for charity! Join the movement at tabforacause.org",
-          url: "https://tab.gladly.io/2-million/",
-        });
-      } catch (error) {
-        console.log("Error sharing:", error);
-      }
-    } else {
-      // Fallback for browsers that don't support Web Share API
-      alert("Thanks for sharing the news!");
-    }
+  const handleShare = () => {
+    // Tell parent to show the referral iframe
+    const url = 'https://tab.gladly.io/v5/referral?user_id=woots';
+    window.parent.postMessage({
+      show: true,
+      iframe: url,
+      height: document.body.scrollHeight,
+      slot: 'modal-center',
+      version: 'Version0',
+      notification: '2m-reached-dec-2025'
+    }, '*');
   };
 
   // Smoother, less "bouncy" entrance for a more professional feel
