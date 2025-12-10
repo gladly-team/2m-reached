@@ -61,7 +61,7 @@ export const CelebrationModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute inset-0 bg-slate-900/60"
+            className="absolute inset-0"
             onClick={onClose}
           />
 
