@@ -18,16 +18,17 @@ export const CelebrationModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleShare = () => {
-    // Tell parent to show the referral iframe
-    const url = 'https://tab.gladly.io/v5/referral?user_id=woots';
-    window.parent.postMessage({
-      show: true,
-      iframe: url,
-      height: document.body.scrollHeight,
-      slot: 'modal-center',
-      version: 'Version0',
-      notification: '2m-reached-dec-2025'
-    }, '*');
+    alert("Share functionality is not implemented in this demo.");
+    // // Tell parent to show the referral iframe
+    // const url = 'https://tab.gladly.io/v5/referral?user_id=woots';
+    // window.parent.postMessage({
+    //   show: true,
+    //   iframe: url,
+    //   height: document.body.scrollHeight,
+    //   slot: 'modal-center',
+    //   version: 'Version0',
+    //   notification: '2m-reached-dec-2025'
+    // }, '*');
   };
 
   // Smoother, less "bouncy" entrance for a more professional feel
